@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-br"> 
+    <head> 
+        <title>TimeProdutive</title>
+        <meta charset = utf-8>
+        <meta name="author" content="Raquel">
+
+        <link rel="stylesheet" href="css/style.css"> 
+    
+    </head>
+
+
+    <body>
+        <div id="principal">
+            <header>
+                <nav>
+                    <div class ="container">
+                        <div>
+                            <img src ="img/Group 13.png" class="imagem_titulo" alt="">
+                        </div>
+                        <div>
+                            <ul>
+                                <li><a href = "index.html">Inicio</a></li>
+                                 <li><a href = "atividade.html">Atividades</a></li>                        
+                            </ul>                        
+                        </div>
+                    </div>
+                    
+                </nav>
+
+                <div class="container"> 
+                    <div class="titulo"></div>
+                    <h1>Atividades</h1>
+                    <p>Acompanhe e adicione suas atividades, caso conclua a atividade é só apagar no botao "X".</p>
+                    <a href = "adicionar.html" class="criar">Criar atividade</a>
+                </div>
+               
+            </header>
+
+            <section id="cardsAtividades">
+                <div class="container">
+                    <div class="conteudo" id="cards">
+                        <div class="card">
+                            <h3>Nome</h3>
+                            <p>Data</p>
+                            <p>Observações</p>
+                            <img src="fechar.png" alt="" srcset="">
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+
+
+        </div>
+        <img src="img/img_tela.svg" class="img-tela" alt="">
+        
+        <script>
+            let tarefas = localStorage.getItem("tarefasBrowser");
+            tarefas = JSON.parse(tarefas);
+
+            let card = "";
+                for(i in tarefas){
+                    card += `
+                    <div class="card">
+                        <p>${tarefas[i].nome}</p>
+                        <p>${tarefas[i].data}</p>
+                        <p>${tarefas[i].observacao}</p>
+                        <img src="fechar.png" class="close" alt="" srcset="" onclick="excluir(${i})">
+                        
+                    </div>`
+                }
+
+                document.getElementById("cards").innerHTML = card
+          
+                
+
+            function excluir(indice){
+                tarefas.splice(indice, 1);
+                localStorage.setItem("tarefasBrowser",JSON.stringify(tarefas));
+                alert("Tarefa excluida");
+                location.reload();
+
+
+            }
+
+
+        </script>
+
+
+
+    </body>
+</html>

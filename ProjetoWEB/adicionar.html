@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+    <div id="principal">
+        <header class="tela1">
+            <nav>
+                <div class ="container">
+                    <div>
+                        <img src ="img/Group 13.png" class="imagem_titulo" alt="">
+                    </div>
+                    <div>
+                        <ul>
+                            <li><a href = "index.html">Inicio</a></li>
+                             <li><a href = "atividade.html">Atividades</a></li>                        
+                        </ul>                        
+                    </div>
+                </div>
+                
+            </nav>
+
+            <div class="container"> 
+                <div class="titulo"></div>
+                <h1>Adicione suas atividades</h1>
+                <p>Adicione um nome, data e observações a sua atividade.</p>
+                
+            </div>
+        </header>
+    </div>
+
+
+   
+
+    <div class="container">
+        <form id="formularioAdicionar">
+            <label form="nome">Nome </label>
+            <input type="text" id="nome">
+    
+            <label form="data">Data</label>
+            <input type="text" id="data">
+    
+            <label form="observacao">Observação</label>
+            <input type="text" id="observacao">   
+            
+             <button>Salvar</button>
+        </form>
+
+    </div>
+
+    
+    <img src="img/img_tela.svg" class="img-tela" alt="">
+
+    <script>
+
+        let form=document.getElementById("formularioAdicionar");
+        form.addEventListener("submit", adicionar);
+
+        function adicionar(){
+            let nome = document.getElementById("nome").value;
+            let data = document.getElementById("data").value;
+            let observacao = document.getElementById("observacao").value;
+
+            let tarefa ={
+                nome: nome,
+                data: data,
+                observacao: observacao
+            }
+
+            let tarefas = localStorage.getItem("tarefasBrowser");
+            tarefas = JSON.parse(tarefas);
+
+            if(tarefas === null){
+                tarefas = [];
+            }
+            
+            tarefas.push(tarefa);
+
+           
+            localStorage.setItem("tarefasBrowser", JSON.stringify(tarefas));
+
+            alert("Tarefa adicionada");
+            
+        }        
+        
+    </script>
+    
+</body>
+</html>

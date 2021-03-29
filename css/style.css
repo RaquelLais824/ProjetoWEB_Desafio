@@ -1,0 +1,109 @@
+
+
+
+.container h1{
+    margin-top: 80px;
+    position: relative;
+    width: 498px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 50px;
+    line-height: 42px;
+
+    color: #140330;
+
+}
+.container p{
+    position: relative;
+    width: 498px;
+    
+    margin-top: 50px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 42px;
+
+    color: #140330;
+
+}
+
+.container{
+    max-width: 1200px;
+    margin: auto;
+}
+
+.img-tela{
+    float: right;
+    
+}
+
+#img_home.img-tela{
+    margin-top: -200px;
+}
+
+.imagem_titulo{
+    margin-top: 50px;   
+
+}
+
+nav .container{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+ul{
+    display: flex;
+    float: right
+}
+
+li{
+    margin-top: 90px;
+    margin-left: 60px;
+    font-size: 18px;
+}
+
+.criar{
+
+    margin-top: 30px;
+    font-size: 25px;
+    font-family: Roboto;
+    color: #140330;
+}
+
+.bc{
+    margin-top: 80px;
+}
+
+label{
+    font-size: 25px;
+}
+
+.card p{
+    
+    width: 140px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: Open Sans Condensed;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 33px;
+
+}
+
+.card{
+    margin-top: 20px;
+    background: rgb(233, 231, 231);
+    width: 202px;
+    position: relative;
+}
+
+.close{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
